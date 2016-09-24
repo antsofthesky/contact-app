@@ -1,5 +1,6 @@
 {
-  "name": "test-app",
+  "name": "contact-app",
+  "homepage": "https://antsofthesky.github.io/contact-app/build",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
