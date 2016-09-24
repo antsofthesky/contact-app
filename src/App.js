@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import './css/App.css';
@@ -20,7 +20,7 @@ import ContactList from './components/ContactList';
 // Create the store and pass in all the reducers using combineReducers. Pass in the devTools objects as the second argument
 const store = createStore(combineReducers(reducers), window.devToolsExtension && window.devToolsExtension());
 
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(hashHistory, store);
 
 
 class App extends Component {
