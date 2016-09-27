@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -9,7 +9,6 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import './css/App.css';
 
 import * as reducers from './reducers/reducers';
-
 reducers.routing = routerReducer;
 
 // Import any necessary components
@@ -22,22 +21,17 @@ const store = createStore(combineReducers(reducers), window.devToolsExtension &&
 
 const history = syncHistoryWithStore(hashHistory, store);
 
-
-class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Router history={history}>
-                    <Route path="/" component={Main}>
-                        {/* IndexRoute is used here because we want / to essentially be the same as /new. */}
-                        <IndexRoute component={Form} />
-                        <Route path="new" component={Form} />
-                        <Route path="contacts" component={ContactList} />
-                    </Route>
-                </Router>
-            </Provider>
-        );
-    };
+export default function App() {
+    return (
+        <Provider store={store}>
+            <Router history={history}>
+                <Route path="/" component={Main}>
+                    {/* IndexRoute is used here because we want / to essentially be the same as /new. */}
+                    <IndexRoute component={Form} />
+                    <Route path="new" component={Form} />
+                    <Route path="contacts" component={ContactList} />
+                </Route>
+            </Router>
+        </Provider>
+    );
 }
-
-export default App;

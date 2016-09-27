@@ -8,7 +8,6 @@ import Message from './Message';
 
 import { removeContact } from '../actions/actions';
 
-
 function mapStateToProps(state) {
     return {
         contacts: state.contacts

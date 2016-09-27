@@ -35,7 +35,6 @@ class Form extends Component {
 			showMsg: true
 		});
 
-
         // Clear the form
         e.currentTarget.reset();
 

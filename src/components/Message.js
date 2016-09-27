@@ -1,12 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Message extends Component {
-
-    render() {
-        return (
-            <p className={this.props.showMsg ? 'show ' : 'hide ' + this.props.cssClass}>{this.props.text}</p>
-        );
-    }
+export default function Message(props) {
+    return <p className={props.showMsg ? 'show ' : 'hide ' + props.cssClass}>{props.text}</p>;
 }
-
-export default Message;

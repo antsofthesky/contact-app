@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
 
-class Main extends Component {
-    render() {
-        return (
-            <div className="App">
-                <Header />
+export default function Main(props) {
+    return (
+        <div className="App">
+            <Header />
 
-                <div className="container">
-                    {this.props.children}
-                </div>
-
-                <Footer date={new Date()} />
+            <div className="container">
+                {props.children}
             </div>
-        );
-    };
-}
 
-export default Main;
+            <Footer date={new Date()} />
+        </div>
+    );
+}
